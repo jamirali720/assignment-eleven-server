@@ -66,8 +66,10 @@ client.connect(err => {
     console.log(name, email, phone, price, title, address, date)
     enrollingCollection.insertOne({name, email, phone, price, title, address, date})
     .then(result => {     
-      res.send(result.insertedCount > 0)    
+      res.send(result.insertedCount > 0)     
      
+    }).catch(err => {
+      console.log(err)
     })
     
   })
@@ -113,6 +115,7 @@ client.connect(err => {
       res.send(documents[0])
     })
   })
+
   
   app.get('/allServices', (req, res) => {
     collection.find({})
