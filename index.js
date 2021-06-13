@@ -4,7 +4,7 @@ const cors = require("cors");
 const ObjectId = require("mongodb").ObjectId;
 const admin = require("firebase-admin");
 require("dotenv").config();
-const port = 4000;
+const port = process.env.PORT || 4000;
 const fileUpload = require("express-fileupload");
 const app = express();
 app.use(bodyParser.json());
@@ -205,4 +205,4 @@ client.connect((err) => {
 app.get("/", (req, res) => {
   res.send("Ya Allah,  forgive me");
 });
-app.listen(port);
+app.listen(process.env.PORT || 4000);
