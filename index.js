@@ -32,7 +32,7 @@ client.connect((err) => {
     const title = req.body.title;
     const price = req.body.price;
     const desc = req.body.description;
-    const date = req.body.date;
+    const date = req.body.date;y
     const file = req.files.file;
    
     const newImg = file.data;
