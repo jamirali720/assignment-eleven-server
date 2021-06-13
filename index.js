@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(fileUpload());
 
-// var serviceAccount = require('./Configs/assignment-11-b4b5e-firebase-adminsdk-fkx46-f4f5ac4d10.json');
-var serviceAccount = require(process.env.DB_CONFIGS);
+var serviceAccount = require('./Configs/assignment-11-b4b5e-firebase-adminsdk-fkx46-f4f5ac4d10.json');
+
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
